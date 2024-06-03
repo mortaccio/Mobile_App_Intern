@@ -10,13 +10,11 @@ import SwiftUI
 struct ProductDetailView: View {
     var product: Product
     @State private var isFavorite: Bool
-    
+    @State private var inCartProducts: Set<Product> = []
     init(product: Product, isFavorite: Bool) {
             self.product = product
             self._isFavorite = State(initialValue: isFavorite)
         }
-    
-    
     var body: some View {
         
         NavigationView{
@@ -31,7 +29,7 @@ struct ProductDetailView: View {
                 VStack{
                     Text(product.name)
                         .font(Font.productTitle)
-                        .foregroundStyle(Color.accentColor)
+                        .foregroundStyle(Color.black)
                     
                     Text("$ \(product.price)")
                         .font(Font.productActualPrice)
@@ -46,7 +44,7 @@ struct ProductDetailView: View {
                 HStack{
                     Text("Information")
                         .font(Font.informationTitle)
-                        .foregroundStyle(Color.accentColor)
+                        .foregroundStyle(Color.black)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     
@@ -56,9 +54,6 @@ struct ProductDetailView: View {
                     .foregroundStyle(Color.details)
                     .font(Font.productDescription)
                     .padding()
-                
-                
-                FooterView()
             }
         }
     }

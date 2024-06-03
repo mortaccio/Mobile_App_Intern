@@ -20,24 +20,35 @@ struct HeaderView: View {
                 } label: {
                     Image("ic-user")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .colorInvert()
+                        .aspectRatio(contentMode: .fill)
+                        .padding(.bottom, 15)
                 }
                 .frame(width: 24,height: 24)
                 .frame(maxWidth: .infinity,alignment: .leading)
                 .padding()
-                
-                Image("ic-logo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 85,height: 85)
+                HStack{
+                    Text("TECH").font(Font.system(.largeTitle))
+                        .aspectRatio(contentMode: .fill)
+                        .bold()
+                        .padding(.bottom, 15)
+                        
+                    Image("ic-logo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: .infinity,height: 50)
+                        .padding(.bottom, 15)
+                    Text("DEUS").font(Font.system(.largeTitle))
+                        .aspectRatio(contentMode: .fill)
+                        .bold()
+                        .padding(.bottom, 15)
+                }
                 Button {
                     favoritesMenuAction()
                 } label: {
                     Image("ic-heart")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .colorInvert()
+                        .aspectRatio(contentMode: .fill)
+                        .padding(.bottom, 15)
                 }
                 .frame(width: 24,height: 24)
                 .frame(maxWidth: .infinity,alignment: .trailing)
@@ -49,5 +60,9 @@ struct HeaderView: View {
         .background(Color.accentColor)
         .shadow(radius: 0.3)
     }
+}
+
+#Preview {
+    ContentView()
 }
 

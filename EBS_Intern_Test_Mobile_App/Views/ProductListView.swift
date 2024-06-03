@@ -1,10 +1,3 @@
-//
-//  ProductListView.swift
-//  EBS_Intern_Test_Mobile_App
-//
-//  Created by Artiom on 14/03/2024.
-//
-
 import SwiftUI
 
 struct ProductListView: View {
@@ -13,6 +6,8 @@ struct ProductListView: View {
     @State private var isLoading = false
     @State public var favoriteProducts: Set<Product> = []
     @State private var inCartProducts: Set<Product> = []
+    
+    @ObservedObject var cartViewModel: CartViewModel
     
     var body: some View {
         NavigationView {
@@ -23,25 +18,28 @@ struct ProductListView: View {
                             AsyncImage(url: product.main_image) { image in
                                 image.resizable()
                                     .aspectRatio(contentMode: .fit)
+                                    .frame(width: 120, height: 100)
                             } placeholder: {
                                 ProgressView()
                             }
-                            .frame(width: 100, height: 100)
+                            .frame(width: 120, height: 100)
                             .cornerRadius(8)
                             
                             VStack {
                                 NavigationLink(destination: ProductDetailView(product: product, isFavorite: favoriteProducts.contains(product))) {
                                     Text(product.name.split(separator: " ").prefix(3).joined(separator: " "))
-                                        .frame(maxWidth: .infinity,alignment:.center)
+                                        .frame(maxWidth: .infinity, alignment: .center)
                                 }
                                 .font(Font.productTitle)
-                                .foregroundStyle(Color.accentColor)
+                                .foregroundStyle(Color.black)
                                 .padding(.top)
+                                .frame(alignment: .center)
                                 
                                 Text(product.details.split(separator: " ").prefix(5).joined(separator: " "))
                                     .foregroundStyle(Color.details)
                                     .font(Font.productDescription)
                                     .padding(.top)
+                                    .aspectRatio(contentMode: .fit)
                                 
                                 HStack {
                                     Text("$ \(String(format: "%.0f", product.price))")
@@ -54,7 +52,7 @@ struct ProductListView: View {
                                 }
                                 .padding(.top)
                                 
-                                HStack{
+                                HStack {
                                     Button(action: {
                                         if favoriteProducts.contains(product) {
                                             favoriteProducts.remove(product)
@@ -69,26 +67,22 @@ struct ProductListView: View {
                                     Button(action: {
                                         if inCartProducts.contains(product) {
                                             inCartProducts.remove(product)
+                                            cartViewModel.removeFromCart(product: product)
                                         } else {
                                             inCartProducts.insert(product)
+                                            cartViewModel.addToCart(product: product)
                                         }
                                     }) {
                                         Image(systemName: inCartProducts.contains(product) ? "cart.fill" : "cart")
-                                            
                                     }
                                     .padding(.trailing)
-                                    
                                 }
                                 .padding(.top)
                                 .buttonStyle(PlainButtonStyle())
-                                
                             }
-                            
                         }
-                        
                     }
                     .onAppear {
-
                         if self.shouldLoadNextPage(product) {
                             self.loadNextPage()
                         }
@@ -113,7 +107,6 @@ struct ProductListView: View {
         return product.id == lastProduct.id
     }
     
-    
     private func loadNextPage() {
         isLoading = true
         currentPage += 1
@@ -127,7 +120,6 @@ struct ProductListView: View {
         }
     }
     
-    
     private func fetchProducts() {
         isLoading = true
         ProductListModel().fetchProducts(page: currentPage, pageSize: 10) { apiResponse, error in
@@ -140,9 +132,7 @@ struct ProductListView: View {
         }
     }
 }
+
 #Preview {
-    ProductListView()
+    ProductListView(cartViewModel: CartViewModel())
 }
-
-
-
