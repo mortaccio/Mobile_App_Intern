@@ -1,4 +1,7 @@
 import SwiftUI
+import Firebase
+import FirebaseCore
+import FirebaseAuth
 
 struct ContentView: View {
     @StateObject private var cartViewModel = CartViewModel()
