@@ -13,11 +13,10 @@ class CartViewModel: ObservableObject {
     
     func addToCart(product: Product) {
         if products.firstIndex(where: { $0.id == product.id }) != nil {
-            // Если продукт уже в корзине, увеличиваем его количество (если вам нужно учитывать количество)
-            // products[index].quantity += 1 // Раскомментировать и добавить поле quantity в модель Product
+            
         } else {
             let newProduct = product
-            // newProduct.quantity = 1 // Раскомментировать и добавить поле quantity в модель Product
+            
             products.append(newProduct)
         }
     }

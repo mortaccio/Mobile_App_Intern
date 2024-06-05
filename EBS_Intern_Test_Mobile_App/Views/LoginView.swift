@@ -16,9 +16,9 @@ struct LoginView: View {
     @State private var userIsLoggedIn = false
     
     var body : some View{
-        if userIsLoggedIn {
+        if userIsLoggedIn == true{
             ContentView()
-        }else {
+        } else {
             content
         }
     }
@@ -89,7 +89,7 @@ struct LoginView: View {
                         login()
                     }) {
                         
-                        Text("Sign Up")
+                        Text("Sign in")
                         
                     }.foregroundColor(.orange)
                     

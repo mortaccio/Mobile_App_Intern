@@ -17,7 +17,7 @@ struct EBS_Intern_Test_Mobile_AppApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView()
         }
     }
 }

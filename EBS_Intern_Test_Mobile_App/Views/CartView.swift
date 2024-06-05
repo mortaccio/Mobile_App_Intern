@@ -27,9 +27,10 @@ struct CartView: View {
                     
                     Text(product.name)
                         .aspectRatio(contentMode: .fit)
+                        .font(.footnote)
                     Spacer()
                     Text("$\(product.price, specifier: "%.2f")")
-                    // Text("Quantity: \(product.quantity)") // Раскомментировать если учитываете количество
+                        .font(.footnote)
                     Button(action: {
                         viewModel.removeFromCart(product: product)
                     }) {
@@ -39,5 +40,8 @@ struct CartView: View {
             }
         }
         .navigationBarTitle("Cart")
+        .font(.largeTitle)
     }
 }
+
+

@@ -57,7 +57,7 @@ struct HeaderView: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 45)
-        .background(Color.accentColor)
+        .background(Color.orange)
         .shadow(radius: 0.3)
     }
 }
