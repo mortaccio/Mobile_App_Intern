@@ -25,7 +25,6 @@
 		924ADAE92BA5CD18008035F3 /* FavoritesDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924ADAE82BA5CD18008035F3 /* FavoritesDatabase.swift */; };
 		9274E86F2BF8970C007B9314 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274E86E2BF8970C007B9314 /* CartViewModel.swift */; };
 		9274E8712BF89742007B9314 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274E8702BF89742007B9314 /* CartView.swift */; };
-		92D061142C0DC36E006049F0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D061132C0DC36E006049F0 /* LoginView.swift */; };
 		92D0611A2C0DCEBA006049F0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 92D061192C0DCEBA006049F0 /* FirebaseAnalytics */; };
 		92D0611C2C0DCEBA006049F0 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 92D0611B2C0DCEBA006049F0 /* FirebaseAnalyticsOnDeviceConversion */; };
 		92D0611E2C0DCEBA006049F0 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 92D0611D2C0DCEBA006049F0 /* FirebaseAnalyticsSwift */; };
@@ -96,7 +95,6 @@
 		924ADAE82BA5CD18008035F3 /* FavoritesDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDatabase.swift; sourceTree = "<group>"; };
 		9274E86E2BF8970C007B9314 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		9274E8702BF89742007B9314 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
-		92D061132C0DC36E006049F0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		92D061172C0DCC85006049F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,7 +230,6 @@
 				924ADACF2BA33F64008035F3 /* HeaderView.swift */,
 				924ADAE32BA4AD99008035F3 /* ProductDetailedVIew.swift */,
 				9274E8702BF89742007B9314 /* CartView.swift */,
-				92D061132C0DC36E006049F0 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -428,7 +425,6 @@
 				924ADA892BA319C2008035F3 /* ContentView.swift in Sources */,
 				924ADA872BA319C2008035F3 /* EBS_Intern_Test_Mobile_AppApp.swift in Sources */,
 				9274E8712BF89742007B9314 /* CartView.swift in Sources */,
-				92D061142C0DC36E006049F0 /* LoginView.swift in Sources */,
 				924ADAC12BA32D93008035F3 /* FontStyle.swift in Sources */,
 				924ADAD22BA34832008035F3 /* TypeAlias.swift in Sources */,
 				924ADAD02BA33F64008035F3 /* HeaderView.swift in Sources */,
